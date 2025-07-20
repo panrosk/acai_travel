@@ -115,6 +115,6 @@ make all       # Build and test
 
 This exercise demonstrates how structured LLM outputs can orchestrate multi-agent reasoning using clean Go architecture.
 
-Although only three stages were required, we intentionally separated the **information extractor** into its own endpoint to help debugging and future extensibility.
+Although only three stages were required, we intentionally separated the **information extractor** into its own usecase to help debugging and future extensibility.
 
 A **minimal test suite** is included to validate integration with LLMs and ensure correct behavior of agent workflows. However, full test coverage was deemed **out of scope** for this prototype and is not exhaustive.
