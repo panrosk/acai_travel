@@ -93,6 +93,8 @@ curl -N -X POST http://localhost:8080/travel/recommendation \
 
 ## 🛠 Getting Started
 
+NOTE: DONT FORGET TO CONFIG THE ENV.
+
 ### Build and Run
 
 ```bash
