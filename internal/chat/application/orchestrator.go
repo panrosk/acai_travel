@@ -162,6 +162,7 @@ func (m *MultiAgentOrchestrator) streamFinalSummary(
 	chat := domain.NewChat(input.UserID)
 	chat.AddMessage(domain.NewUserMessage(chat.ID, budget))
 	chat.AddMessage(domain.NewUserMessage(chat.ID, destination))
+	chat.AddMessage(domain.NewUserMessage(chat.ID, "Given this messages pelase give me my best vacations"))
 
 	injections := domain.TripSynthesizerInjection{
 		Suggestions: "Follow very closely toy instructions, Used all information provided by the user",
