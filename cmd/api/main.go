@@ -11,6 +11,7 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/joho/godotenv"
 	_ "github.com/joho/godotenv/autoload"
 )
 
@@ -40,6 +41,21 @@ func gracefulShutdown(fiberServer *server.FiberServer, done chan bool) {
 }
 
 func main() {
+
+	if err := godotenv.Load(".env"); err != nil {
+		log.Println("No .env file found in root, using environment variables")
+	}
+
+	portStr := os.Getenv("PORT")
+	if portStr == "" {
+		log.Fatal("Environment variable PORT is required")
+	}
+
+	_, err := strconv.Atoi(portStr)
+
+	if err != nil {
+		log.Fatalf("Invalid PORT value: %s", portStr)
+	}
 
 	server := server.New()
 
